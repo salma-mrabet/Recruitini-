@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // connect to the database
 mongoose.set("strictQuery", false);
+// check the error in .env ,it's not working when i call it here 
 mongoose.connect("mongodb+srv://pcd:WIneg3GApYMlB4z2@cluster0.mvvc3sz.mongodb.net/?retryWrites=true&w=majority")
 .then(()=> console.log("db connected"))
 .catch(err=>console.log(err.message))
