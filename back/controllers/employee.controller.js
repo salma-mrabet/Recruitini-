@@ -1,4 +1,4 @@
-const employee = require ("../models/employee.model");
+const employee = require ("../models/employeeModel");
 const ValidateEmployee = require('../validation/employee.validation');
 
 
@@ -86,7 +86,7 @@ const AuthEmployee = async (req,res) => {
         res.status(400);
         res.json({message: "invalid email or password"});
         // throw new Error("invalid email or password");
-        throw new Error("invalid email or password");
+       
     }
 
 }
