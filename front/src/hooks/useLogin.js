@@ -25,8 +25,14 @@ export const useLogin = () => {
       // save the user to local storage
       localStorage.setItem('user', JSON.stringify(json))
 
+
+      //dispatch  function is used to trigger actions in a Redux store. 
+      //Redux is a state management library that is commonly used in React applications to manage the application's state.
+      
       // update the auth context
       dispatch({type: 'LOGIN', payload: json})
+      //the Redux store will update its state based on the logic defined in the corresponding reducer function. 
+    
 
       // update loading state
       setIsLoading(false)

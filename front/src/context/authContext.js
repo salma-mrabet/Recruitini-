@@ -20,9 +20,11 @@ export const AuthContextProvider = ({ children }) => {
   })
 
   useEffect(() => {
+    //in local storage user is a json string so we parse it into an object so we can use in javascript
     const user = JSON.parse(localStorage.getItem('user'))
   
     if (user) {
+      //In a Redux application, dispatch is a function that sends an action to the store, which triggers the corresponding reducer function to update the state of the application.
       dispatch({ type: 'LOGIN', payload: user }) 
     }
   }, [])

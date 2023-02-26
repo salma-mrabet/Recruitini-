@@ -98,7 +98,7 @@ export default function LoginPage() {
           <Col sm={10}>
             <Form.Check
               type="radio"
-              label="An Employee"
+              label="Looking for a job"
               name="formHorizontalRadios"
               onChange={()=>{setRole("Employee")}}
               id="An Employee"

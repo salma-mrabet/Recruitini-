@@ -24,17 +24,7 @@ function RegisterPage({ history }) {
     e.preventDefault();
 
     await signup(firstname,lastname,age,email, password, role);
-    // if(!error){
-    //   if(role == "Employee"){
-    //     navigate("/employee")
-
-    //   }else if (role =="Recruiter"){
-    //     navigate("/Recruiter")
-
-
-    //   }
-    // }
-
+ 
 
   }
 
@@ -158,7 +148,7 @@ function RegisterPage({ history }) {
           <Col sm={10}>
             <Form.Check
               type="radio"
-              label="An Employee"
+              label="Looking for a job"
               name="formHorizontalRadios"
               onChange={()=>{setRole("Employee")}}
               id="An Employee"

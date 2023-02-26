@@ -5,14 +5,14 @@ const Recruiter= require('../models/recruiterModel')
 
 const requireAuth = async (req, res, next) => {
   // verify user is authenticated
-  const { authorization } = req.headers
+  const { authorization } = req.headers //contains the web token
   const role = req.body.role
 
   if (!authorization) {
     return res.status(401).json({error: 'Authorization token required'})
   }
 
-  const token = authorization.split(' ')[1]
+  const token = authorization.split(' ')[1] // because the string is in this form "Bearer kjsfyegzycbdbchsbfksgei(the token)"
 
   try {
     const { _id } = jwt.verify(token, process.env.SECRET)
@@ -23,7 +23,7 @@ const requireAuth = async (req, res, next) => {
     if(role=="Employee"){
         req.user = await Employee.findOne({ _id }).select('_id')  
     }else if(role=="Recruiter"){
-        req.user = await Recruiter.findOne({ _id }).select('_id')   
+        req.user = await Recruiter.findOne({ _id }).select('_id')  
     }
     
     console.log(req.user)
@@ -31,7 +31,7 @@ const requireAuth = async (req, res, next) => {
     if(!req.user){
       throw Error("Role and Id are not compatible")
     }else{
-      next()
+      next()  //the next handlerfunction
     }
 
   } catch (error) {

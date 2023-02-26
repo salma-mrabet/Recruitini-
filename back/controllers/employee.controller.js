@@ -76,20 +76,20 @@ const DeleteEmployee = async (req,res) => {
     }
 }
 
-const AuthEmployee = async (req,res) => {
-    const {Email, Password } =req.body; 
+// const AuthEmployee = async (req,res) => {
+//     const {Email, Password } =req.body; 
 
-    const user = await employee.findOne({Email});
-    if (user && (await user.matchPassword(Password))){
-        res.json({message: "matching password"})
-    }else {
-        res.status(400);
-        res.json({message: "invalid email or password"});
-        // throw new Error("invalid email or password");
+//     const user = await employee.findOne({Email});
+//     if (user && (await user.matchPassword(Password))){
+//         res.json({message: "matching password"})
+//     }else {
+//         res.status(400);
+//         res.json({message: "invalid email or password"});
+//         // throw new Error("invalid email or password");
        
-    }
+//     }
 
-}
+// }
 
 module.exports = {
     AddEmployee,
@@ -97,5 +97,5 @@ module.exports = {
     FindSingleEmployee,
     UpdateEmployee,
     DeleteEmployee,
-    AuthEmployee
+    // AuthEmployee
 }

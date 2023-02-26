@@ -3,23 +3,27 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+const cors = require('cors');
 
 require('dotenv').config;
 
 const routerEmployee = require('./routes/employeeRoutes');
 const userRoutes = require('./routes/userRoutes');
+const routerJobOffers = require('./routes/joboffers');
 
 
 
 var app = express();
-
+ 
+app.use(cors());
 
 //Access to fetch at 'http://localhost:3700/api/user/login' from origin 'http://localhost:3000' has been blocked by CORS policy: 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*"); // replace * with your preferred domain(s)
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -29,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // connect to the database
 mongoose.set("strictQuery", false);
-// check the error in .env ,it's not working when i call it here 
+
 mongoose.connect(process.env.MONGO_URI)
 .then(()=> console.log("db connected"))
 .catch(err=>console.log(err.message))
@@ -37,6 +41,7 @@ mongoose.connect(process.env.MONGO_URI)
 //routes
 app.use('/api/user', userRoutes)
 app.use('/api', routerEmployee )
+app.use('/api/job', routerJobOffers )
 
 
 
