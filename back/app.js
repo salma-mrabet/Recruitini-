@@ -3,19 +3,24 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-const cors = require('cors');
+
 
 require('dotenv').config;
 
 const routerEmployee = require('./routes/employeeRoutes');
 const userRoutes = require('./routes/userRoutes');
 const routerJobOffers = require('./routes/joboffers');
+const routerProfile = require('./routes/profileRoutes');
 
 
 
 var app = express();
- 
+
+const cors = require('cors');
 app.use(cors());
+
+
+
 
 //Access to fetch at 'http://localhost:3700/api/user/login' from origin 'http://localhost:3000' has been blocked by CORS policy: 
 app.use((req, res, next) => {
@@ -42,7 +47,7 @@ mongoose.connect(process.env.MONGO_URI)
 app.use('/api/user', userRoutes)
 app.use('/api', routerEmployee )
 app.use('/api/job', routerJobOffers )
-
+app.use('/api', routerProfile)
 
 
 module.exports = app;
