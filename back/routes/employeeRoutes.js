@@ -12,7 +12,7 @@ router.get('/employee',FindAllEmployees );
 router.get('/employee/:id', FindSingleEmployee);
 
 // modify employee
-router.put('/employee/:id',UpdateEmployee );
+router.put('/employeeupdate',UpdateEmployee );
 
 // add employee
 router.delete('/employee/:id', DeleteEmployee);

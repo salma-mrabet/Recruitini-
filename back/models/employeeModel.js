@@ -25,10 +25,26 @@ const EmployeeSchema = new Schema ({
         required: true,
         unique: true,
       },
+      phone: {
+        type: String,
+        default:"",
+        
+      },
       password: {
         type: String,
-        required: true
-      }
+       
+      },
+      linkedin: {
+        type: String,
+        default:"",
+        
+      },
+      university: {
+        type: String,
+        default:"",
+      },
+     
+
    
   
    

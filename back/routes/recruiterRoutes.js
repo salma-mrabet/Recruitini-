@@ -12,7 +12,7 @@ router.get('/recruiter',FindAllRecruiters );
 router.get('/recruiter/:id', FindSingleRecruiter);
 
 // modify recruiter
-router.put('/recruiter/:id',UpdateRecruiter );
+router.put('/recruiterupdate',UpdateRecruiter );
 
 // add recruiter
 router.delete('/recruiter/:id', DeleteRecruiter);
