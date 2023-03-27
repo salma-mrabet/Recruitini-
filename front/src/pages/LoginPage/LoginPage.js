@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MainScreen from '../../components/MainScreen';
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col ,Card} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './LoginPage.css';
 import axios from "axios";
@@ -63,9 +63,12 @@ export default function LoginPage() {
   return (
     <div>
       <MainScreen title="LOGIN">
+    
 
 
       <div className="loginContainer">
+      <Card border="light" className="bg-white shadow-sm mb-4">
+      <Card.Body>
    
         <Form >
           <Form.Group controlId="formBasicemail">
@@ -115,7 +118,7 @@ export default function LoginPage() {
         </Form.Group>
       </fieldset>
 
-      <Button variant="primary" type="submit" disabled={isLoading} onClick={handleSubmit} >
+      <Button className="button" variant="primary" type="submit" disabled={isLoading} onClick={handleSubmit} >
             Submit
           </Button>
           {error && <div className="error">{error}</div>}
@@ -126,7 +129,8 @@ export default function LoginPage() {
           </Col>
         </Row>
    
-
+        </Card.Body>
+      </Card>
       </div>
       </MainScreen>
     </div>

@@ -1,10 +1,12 @@
 import React, { useState} from "react";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col ,Card} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import MainScreen from "../../components/MainScreen";
 import "./RegisterPage.css";
 import { useSignup } from "../../hooks/useSignup";
 import { useNavigate } from "react-router-dom";
+
+
 
 
 
@@ -29,58 +31,12 @@ function RegisterPage({ history }) {
   }
 
 
-  // const dispatch = useDispatch();
-
-  // const userRegister = useSelector((state) => state.userRegister);
-  // const { loading, error, userInfo } = userRegister;
-
-  // const postDetails = (pics) => {
-  //   if (
-  //     pics ===
-  //     "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
-  //   ) {
-  //     return setPicMessage("Please Select an Image");
-  //   }
-  //   setPicMessage(null);
-  //   if (pics.type === "image/jpeg" || pics.type === "image/png") {
-  //     const data = new FormData();
-  //     data.append("file", pics);
-  //     data.append("upload_preset", "notezipper");
-  //     data.append("cloud_name", "piyushproj");
-  //     fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
-  //       method: "post",
-  //       body: data,
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setPic(data.url.toString());
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   } else {
-  //     return setPicMessage("Please Select an Image");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     history.push("/");
-  //   }
-  // }, [history, userInfo]);
-
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-
-  //   if (password !== confirmpassword) {
-  //     setMessage("Passwords do not match");
-  //   } else dispatch(register(name, email, password, pic));
-  // };
 
   return (
     <MainScreen title="REGISTER">
       <div className="loginContainer">
-
+      <Card border="light" className="bg-white shadow-sm mb-4">
+      <Card.Body>
         <Form >
           <Form.Group>
             <Form.Label>First Name</Form.Label>
@@ -166,7 +122,7 @@ function RegisterPage({ history }) {
       </fieldset>
      
 
-          <Button variant="primary" type="submit" disabled={isLoading}  onClick={handleSubmit}>
+          <Button variant="primary" className="button" type="submit" disabled={isLoading}  onClick={handleSubmit}>
             Register
           </Button>
           {error && <div className="error">{error}</div>}
@@ -176,7 +132,11 @@ function RegisterPage({ history }) {
             Have an Account ? <Link to="/login">Login</Link>
           </Col>
         </Row>
+        </Card.Body>
+      </Card>
       </div>
+    
+     
     </MainScreen>
   );
 }

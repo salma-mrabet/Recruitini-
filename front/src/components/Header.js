@@ -19,33 +19,45 @@ export default function Header() {
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav className='m-auto'>
-        {user && (
-          <Nav className="justify-content-end  d-flex align-items-center">
-            <span className="mx-2">{user.email}</span>
-            <Button variant="outline-dark" onClick={handleClick}>Logout</Button>
-            </Nav>
-          )}
+       
         </Nav>
         <Nav
           className="me-auto my-2 my-lg-0"
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link href="#action1">Home</Nav.Link>
-          <Nav.Link href="#action2">Link</Nav.Link>
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="#action2">About Us</Nav.Link>
+          {user && (
           <NavDropdown title="Account" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">
+          
+            <NavDropdown.Item href="/profile">
               My profile
             </NavDropdown.Item>
+            <NavDropdown.Item href="/updateprofile">
+              Update
+            </NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action5">
+            <NavDropdown.Item onClick={handleClick} href="/">
               Logout
             </NavDropdown.Item>
+             
           </NavDropdown>
-          <Nav.Link href="#" disabled>
-            Link
-          </Nav.Link>
+          )}
+           {!user && (
+          <NavDropdown title="Account" id="navbarScrollingDropdown">
+          
+            <NavDropdown.Item href="/login">
+              Login
+            </NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="/signup">
+              Register
+            </NavDropdown.Item>
+             
+          </NavDropdown>
+          )}
+        
         </Nav>
        
       </Navbar.Collapse>

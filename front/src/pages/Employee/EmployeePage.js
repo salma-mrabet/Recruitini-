@@ -2,6 +2,12 @@
 import React,{useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { Worker } from '@react-pdf-viewer/core';
+import { Viewer } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+
+
+
 
 
 
@@ -13,13 +19,19 @@ const EmployeePage = ()=>{
     const [valide,setValide] = useState("")
     const [error,setError] = useState("")
 
-    const {user} = useAuthContext()
+   
+
+    const {user} = useAuthContext();
+
+
+
+    
     
 
     
     const Cvupload = (url) => {
        
-        
+        console.log(url)
         if(url){
            
             fetch("http://localhost:3700/api/profile",{
@@ -115,13 +127,29 @@ const EmployeePage = ()=>{
             </div>
             </div>
 
-            <Button variant="outline-dark"  onClick={CvDetails} >Submit  </Button>
+            <Button variant="outline-primary" onClick={CvDetails} >Submit  </Button>
             {(valide && <div className="valide">Resume uploaded</div>) || (error && <div className="error">{error}</div>)}
 
+            <br></br>
+  
+
+           
+      {/* <h4>View PDF</h4> */}
 
 
+            {/* {<Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
 
-            
+<div
+    style={{
+        border: '1px solid rgba(0, 0, 0, 0.3)',
+        height: '95vh',
+        marginTop : '7.25vh'
+    }}
+>
+    <Viewer fileUrl={cv}  />
+</div>
+
+</Worker>} */}
 
        </div>
        
