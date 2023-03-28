@@ -1,4 +1,4 @@
-const recruiter = require ("../models/recruiter.model");
+const recruiter = require ("../models/recruiterModel");
 const ValidateRecruiter = require('../validation/recruiter.validation');
 
 
@@ -49,18 +49,26 @@ const FindSingleRecruiter = async (req,res) => {
 }
 
 const UpdateRecruiter = async (req,res) => {
-    const { errors, isValid } = ValidateRecruiter(req.body);
+    const { firstname,
+        lastname,
+        age,
+        phone,
+        company,
+        position,
+        description} = req.body;
+    
     try{
-        if(!isValid){
-            res.status(404).json(errors);
-        }else{
+        if(!firstname || !lastname || !age || !phone || !company || !position || !description ){
+            throw Error("Please add all the fields");
+       }else{
+       
         const data = await recruiter.findOneAndUpdate(
-            {_id: req.params.id},
+            {_id: req.user},
             req.body,
             {new:true}
             );
         res.status(201).json(data)
-        }
+       }
     }catch(error){
         console.log(error.message)
     }

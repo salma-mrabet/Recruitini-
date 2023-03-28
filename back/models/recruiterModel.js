@@ -3,10 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const RecruiterSchema = new Schema ({
-    // firstname : String,
-    // lastname : String,
-    // age : String,
-    // email : String,
+   
     firstname : {
       type: String,
       required: true,
@@ -19,12 +16,12 @@ const RecruiterSchema = new Schema ({
     },
     age : {
       type: String,
-      required: true,
+     
       unique: true,
     },
     email: {
         type: String,
-        required: true,
+        
         unique: true,
       },
       password: {

@@ -11,7 +11,7 @@ const routerEmployee = require('./routes/employeeRoutes');
 const userRoutes = require('./routes/userRoutes');
 const routerJobOffers = require('./routes/joboffers');
 const routerProfile = require('./routes/profileRoutes');
-// const routerRecruiter = require('./routes/recruiterRoutes');
+const routerRecruiter = require('./routes/recruiterRoutes');
 
 
 
@@ -49,7 +49,7 @@ app.use('/api/user', userRoutes)
 app.use('/api', routerEmployee )
 app.use('/api/job', routerJobOffers )
 app.use('/api', routerProfile)
-// app.use('/api', routerRecruiter )
+app.use('/api', routerRecruiter )
 
 
 module.exports = app;

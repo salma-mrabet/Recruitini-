@@ -1,6 +1,10 @@
 const express = require('express');
+const requireAuth= require ('../middleware/requireAuth')
 const { AddRecruiter, FindAllRecruiters, FindSingleRecruiter, UpdateRecruiter, DeleteRecruiter } = require('../controllers/recruiter.controller');
 const router = express.Router();
+
+// require auth for all  routes
+router.use(requireAuth);
 
 // add recruiter
 router.post('/recruiter', AddRecruiter);

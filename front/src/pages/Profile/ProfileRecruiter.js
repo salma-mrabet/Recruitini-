@@ -6,15 +6,12 @@ export default function ProfileRecruiter() {
   )
 }
 
-
-
 // import React, { Fragment,  useState,useEffect } from "react";
 // import { useAuthContext } from "../../hooks/useAuthContext";
 // import Card from "react-bootstrap/Card";
 // import ListGroup from "react-bootstrap/ListGroup";
 // import Button from "react-bootstrap/Button";
-// import Modal from "react-bootstrap/Modal";
-// import Form from "react-bootstrap/Form";
+
 
 // export default function ProfileRecruiter() {
 
@@ -59,20 +56,23 @@ export default function ProfileRecruiter() {
 //           <Card.Title>{element.firstname} {element.lastname} </Card.Title>
 //         </Card.Body>
 //         <ListGroup variant="flush">
+//         {/* <ListGroup.Item>
+//             <strong>Email:</strong>{element.email} 
+//           </ListGroup.Item> */}
 //           <ListGroup.Item>
-//             <strong>Age:</strong> {element.age}
+//             <strong>Age:</strong>{element.age} 
 //           </ListGroup.Item>
 //           <ListGroup.Item>
-//             <strong>Phone Number:</strong> {element.phone}
+//             <strong>Phone Number:</strong> {element.phone} 
 //           </ListGroup.Item>
 //           <ListGroup.Item>
-//             <strong>Company Name :</strong> {element.company}
+//             <strong>Company Name :</strong> {element.company} 
 //           </ListGroup.Item>
 //           <ListGroup.Item>
-//             <strong>Occupied Position:</strong> {element.position}
+//             <strong>Occupied Position:</strong> {element.position} 
 //           </ListGroup.Item>
 //           <ListGroup.Item>
-//             <strong>About The Company:</strong> {element.description}
+//             <strong>About The Company:</strong> {element.description} 
 //           </ListGroup.Item>
         
 //         </ListGroup>

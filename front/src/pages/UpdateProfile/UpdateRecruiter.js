@@ -1,7 +1,25 @@
-import React from 'react'
+import React from "react";
 
-export default function ProfileRecruiter() {
+import { InfoForm } from "../../components/FormRecruiter";
+
+
+
+export default  () => {
+  
   return (
-    <div>ProfileRecruiter</div>
-  )
-}
+    <>
+      <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+      
+
+      
+      </div>
+
+  
+       
+          <InfoForm />
+       
+
+   
+    </>
+  );
+};

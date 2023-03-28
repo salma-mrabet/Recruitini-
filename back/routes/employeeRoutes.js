@@ -5,7 +5,7 @@ const requireAuth= require ('../middleware/requireAuth')
 const { AddEmployee, FindAllEmployees, FindSingleEmployee, UpdateEmployee, DeleteEmployee, AuthEmployee } = require('../controllers/employee.controller');
 
 const router = express.Router();
-// require auth for all job routes
+// require auth for all  routes
 router.use(requireAuth);
 
 // add employee
