@@ -157,7 +157,7 @@ export const GeneralInfoForm = () => {
             <Row>
               <div className="mt-3">
          
-                <Button variant="outline-primary"   onClick={handleUpdate}>
+                <Button variant="outline-primary" href="/profile"   onClick={handleUpdate}>
                   Save All
                 </Button>
                

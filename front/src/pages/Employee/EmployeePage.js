@@ -1,10 +1,11 @@
 
-import React,{useState} from 'react';
+import React,{useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { Worker } from '@react-pdf-viewer/core';
 import { Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 
 
 
@@ -14,15 +15,15 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 const EmployeePage = ()=>{
     const [title,setTitle] = useState("")
     const [body,setBody] = useState("")
-    const [cv,setCv] = useState("http://res.cloudinary.com/djnku58sy/image/upload/v1680011580/jd78camuvak3rnyfqfzj.pdf")
+    const [cv,setCv] = useState("")
 
     const [valide,setValide] = useState("")
     const [error,setError] = useState("")
 
-   
+    // Create new plugin instance
+   const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
     const {user} = useAuthContext();
-
 
 
     
@@ -64,6 +65,8 @@ const EmployeePage = ()=>{
                 console.log(err)
             })
 
+        
+
             
         }else{
             throw Error("url is missing")
@@ -87,7 +90,7 @@ const EmployeePage = ()=>{
             Cvupload(data.url);
             console.log(data.url);
             console.log(data);
-            setCv(data.url);
+            setCv(data.url.toString());
             console.log(data.url);
             console.log(cv);
         })
@@ -109,6 +112,7 @@ const EmployeePage = ()=>{
  
 
    return(
+    
        <div className="card input-filed"
        style={{
            margin:"20vh auto",
@@ -147,16 +151,13 @@ const EmployeePage = ()=>{
       {/* <h4>View PDF</h4> */}
 
 
-            {/* {cv && <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
+            {/* {cv && <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js">
 
 <div
-    style={{
-        border: '1px solid rgba(0, 0, 0, 0.3)',
-        height: '95vh',
-        marginTop : '7.25vh'
-    }}
+    
 >
-    <Viewer fileUrl={cv}  />
+    <Viewer fileUrl={cv} 
+      />
 </div>
 
 </Worker>} */}

@@ -3,7 +3,7 @@ const { AddProfile, FindAllProfiles, FindSingleProfile, UpdateProfile, DeletePro
 const requireAuth = require('../middleware/requireAuth');
 const router = express.Router();
 
-//require auth for all job routes
+// require auth for all job routes
 // router.use(requireAuth);
 
 // add employee
