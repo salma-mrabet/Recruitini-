@@ -1,3 +1,4 @@
+
 .title {
     font-size: 80px;
   }
@@ -16,6 +17,7 @@
 
     background-position: center;
     background-size: cover;
+    background-image: url("./home-bg.jpg");
   }
   .buttonContainer {
     margin-top: 50px;

@@ -12,7 +12,8 @@ import EmployeePage from './pages/Employee/EmployeePage';
 import UpdateEmployee from './pages/UpdateProfile/UpdateEmployee';
 import UpdateRecruiter from './pages/UpdateProfile/UpdateRecruiter';
 import ProfileEmployee from './pages/Profile/ProfileEmployee';
-import ProfileRecruiter from './pages/UpdateProfile/UpdateRecruiter';
+import ProfileRecruiter from './pages/Profile/ProfileRecruiter';
+
 
 
 function App() {

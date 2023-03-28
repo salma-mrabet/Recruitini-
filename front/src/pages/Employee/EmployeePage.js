@@ -14,7 +14,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 const EmployeePage = ()=>{
     const [title,setTitle] = useState("")
     const [body,setBody] = useState("")
-    const [cv,setCv] = useState("")
+    const [cv,setCv] = useState("http://res.cloudinary.com/djnku58sy/image/upload/v1680011580/jd78camuvak3rnyfqfzj.pdf")
 
     const [valide,setValide] = useState("")
     const [error,setError] = useState("")
@@ -31,9 +31,11 @@ const EmployeePage = ()=>{
     
     const Cvupload = (url) => {
        
-        console.log(url)
+        console.log(url);
+        
+    
         if(url){
-           
+         
             fetch("http://localhost:3700/api/profile",{
                 method:"post",
                 headers:{
@@ -49,16 +51,20 @@ const EmployeePage = ()=>{
                     
                 })
                 
+                
             }).then(res=>res.json())
             .then(()=>{
                 setValide("true")
                 setTimeout(()=>{setValide("")}
                 , 2000)
+               
                 
             })
             .catch(err=>{
                 console.log(err)
             })
+
+            
         }else{
             throw Error("url is missing")
         }
@@ -78,8 +84,12 @@ const EmployeePage = ()=>{
          })
          .then(res=>res.json())
          .then(data=>{
-            Cvupload(data.url)
-            console.log(data)
+            Cvupload(data.url);
+            console.log(data.url);
+            console.log(data);
+            setCv(data.url);
+            console.log(data.url);
+            console.log(cv);
         })
          .catch(err=>{
              console.log(err)
@@ -137,7 +147,7 @@ const EmployeePage = ()=>{
       {/* <h4>View PDF</h4> */}
 
 
-            {/* {<Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
+            {/* {cv && <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
 
 <div
     style={{

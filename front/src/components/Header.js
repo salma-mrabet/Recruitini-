@@ -13,7 +13,7 @@ export default function Header() {
 
   
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" >
     <Container fluid>
       <Navbar.Brand href="/">Recruitini</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />

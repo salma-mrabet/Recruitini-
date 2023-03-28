@@ -50,20 +50,20 @@ const FindSingleEmployee = async (req,res) => {
 }
 
 const UpdateEmployee = async (req,res) => {
-    const {      firstname,
+    const { firstname,
         lastname,
         age,
         phone,
         linkedin,
-        university } = req.body;
+        university} = req.body;
 
     try{
         if(!firstname || !lastname || !age || !phone || !university || !linkedin ){
              throw Error("Please add all the fields");
         }else{
         const data = await employee.findOneAndUpdate(
-            {_id: req.params.id},
-            {      firstname,lastname,age,phone,linkedin,university },
+            {_id: req.user},
+            req.body,
             {new:true}
             );
         res.status(201).json(data)

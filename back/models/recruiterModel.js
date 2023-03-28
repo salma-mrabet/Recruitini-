@@ -30,7 +30,28 @@ const RecruiterSchema = new Schema ({
       password: {
         type: String,
         required: true
-      }
+      },
+      phone: {
+        type: String,
+       default:"",
+      },
+      company: {
+        type: String,
+       default:"",
+      },
+      
+      //occupied position
+      position: {
+        type: String,
+       default:"",
+      },
+      //about the company 
+      description: {
+        type: String,
+       default:"",
+      },
+
+
   
    
 },{timestamps: true })

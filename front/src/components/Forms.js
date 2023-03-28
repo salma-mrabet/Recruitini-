@@ -24,7 +24,8 @@ export const GeneralInfoForm = () => {
   const { user } = useAuthContext();
 
   const handleUpdate = () => {
-    fetch(`/api/employeeupdate`, {
+    
+    fetch(`http://localhost:3700/api/employeeupdate`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -38,15 +39,15 @@ export const GeneralInfoForm = () => {
         phone,
         linkedin,
         university,
-        email:user.email,
+       
       }),
    
     })
       .then((res) => res.json())
       .then((data) => {
-
-        console.log(data);
        
+        console.log(data);
+       console.log("aa")
        
         setFirstname(data.firstname);
         setLastname(data.lastname);
@@ -76,10 +77,10 @@ export const GeneralInfoForm = () => {
                 <Form.Group id="firstName">
                   <Form.Label>First Name</Form.Label>
                   <Form.Control
-                  
+                   
                     type="text"
                     placeholder="Enter your first name"
-                    onChange={(e) => setFirstname(e.target.value||"None")}
+                    onChange={(e) => setFirstname(e.target.value)}
                   />
                 </Form.Group>
               </Col>
@@ -90,7 +91,7 @@ export const GeneralInfoForm = () => {
                    
                     type="text"
                     placeholder="Also your last name"
-                    onChange={(e) => setLastname(e.target.value||"None")}
+                    onChange={(e) => setLastname(e.target.value)}
                   />
                 </Form.Group>
               </Col>
@@ -101,7 +102,7 @@ export const GeneralInfoForm = () => {
                   <Form.Label>Age</Form.Label>
                   <Form.Control
                    placeholder="age" 
-                   onChange={(e) => setAge(e.target.value||"None")}
+                   onChange={(e) => setAge(e.target.value)}
                   
                   />
                 </Form.Group>
@@ -116,7 +117,7 @@ export const GeneralInfoForm = () => {
                     
                     type="number"
                     placeholder=" 22 678 910"
-                    onChange={(e) => setPhone(e.target.value||"None")}
+                    onChange={(e) => setPhone(e.target.value)}
                   />
                 </Form.Group>
               </Col>
@@ -131,7 +132,7 @@ export const GeneralInfoForm = () => {
                
                     type="text"
                     placeholder="University"
-                    onChange={(e) => setUniversity(e.target.value||"None")}
+                    onChange={(e) => setUniversity(e.target.value)}
                   />
                 </Form.Group>
               </Col>
@@ -145,7 +146,7 @@ export const GeneralInfoForm = () => {
                 <Form.Group id="city">
                   <Form.Label>Linkedin</Form.Label>
                   <Form.Control  type="text" placeholder="Enter your Linkedin url"
-                    onChange={(e) => setLinkedin(e.target.value||"None")}
+                    onChange={(e) => setLinkedin(e.target.value)}
                      />
                 </Form.Group>
                 

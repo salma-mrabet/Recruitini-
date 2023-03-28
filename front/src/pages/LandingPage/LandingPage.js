@@ -5,6 +5,7 @@ import "./LandingPage.css";
 export default function LandingPage() {
   return (
     <div className='main'>
+        
         <Container>
             <Row>
                <div className='intro-text'>
@@ -29,6 +30,8 @@ export default function LandingPage() {
                </div>
             </Row>
         </Container>
+
+        
     </div>
   )
 }
