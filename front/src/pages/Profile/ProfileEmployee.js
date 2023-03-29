@@ -22,7 +22,7 @@ export default function ProfileEmployee() {
         })
           .then((res) => res.json())
           .then((data) => {
-         
+        
          data.forEach(element => {
             if (element.email === user.email) {
                 setElement(element);

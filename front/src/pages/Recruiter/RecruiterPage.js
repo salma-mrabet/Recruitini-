@@ -1,6 +1,9 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
-import { useAuthContext } from "../../hooks/useAuthContext"
+import { useAuthContext } from "../../hooks/useAuthContext";
+import RowDetails from "./RowDetails";
+import './form.css';
+
 
 const RecruiterPage  = ()=>{
     const [jobtitle,setJobtitle] = useState("")
@@ -15,8 +18,64 @@ const RecruiterPage  = ()=>{
 
     const {user} = useAuthContext()
 
-    
+    // const OnDelete = () => {
+    //     fetch(`http://localhost:3700/api/jobofferdelete`, {
+    //         method: "delete",
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //           Authorization: `Bearer ${user.token}`,
+    //           Role: `${user.role}`,
+    //         },
+    //         // body: JSON.stringify({
+    //         //   jobtitle,
+    //         //   company,
+    //         //   jobdescription,
+    //         //   joblocation,
+    //         //   skills,
+             
+    //         // }),
+         
+    //       })
+    //   };
 
+    // useEffect(() => {
+    
+    //     fetch(`http://localhost:3700/api/joboffers`, {
+    //       method: "get",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         Authorization: `Bearer ${user.token}`,
+    //         Role: `${user.role}`,
+    //       },
+    //       body: JSON.stringify({
+    //         jobtitle,
+    //         company,
+    //         jobdescription,
+    //         joblocation,
+    //         skills,
+           
+    //       }),
+       
+    //     })
+    //       .then((res) => res.json())
+    //       .then((data) => {
+           
+    //         console.log(data);
+    //        console.log("aa")
+           
+    //         setJobtitle(data.jobtitle);
+    //         setJobdescription(data.jobdescription);
+    //         setJoblocation(data.joblocation);
+    //         setCompany(data.company);
+    //         setSkills(data.skills);
+           
+    //       })
+    //       .catch((err) => {
+    //         console.log(err);
+    //       });
+    //   })
+
+      
     const handleSubmit =async (e) => {
         console.log("test")
         e.preventDefault();
@@ -25,10 +84,11 @@ const RecruiterPage  = ()=>{
                 method:"post",
                 headers:{
                     "Content-Type":"application/json",
-                    "Authorization": `Bearer ${user.token}`
+                    Authorization: `Bearer ${user.token}`,
+                    Role: `${user.role}`,
                 },
                 body:JSON.stringify({
-                    role:user.role,
+                    
                     jobtitle,
                     company,
                     jobdescription,
@@ -104,6 +164,10 @@ const RecruiterPage  = ()=>{
             <Button variant="outline-dark" onClick={handleSubmit}>Add offer</Button>
             {(valide && <div className="valide">Job uploaded</div>) || (error && <div className="error">{error}</div>)}
        </div>
+
+
+
+
    )
 }
 

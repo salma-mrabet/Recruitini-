@@ -21,7 +21,7 @@ router.get('/employee/:id', FindSingleEmployee);
 router.put('/employeeupdate',UpdateEmployee );
 
 // add employee
-router.delete('/employee/:id', DeleteEmployee);
+router.delete('/employeedelete', DeleteEmployee);
 
 // router.post('/employee/login', AuthEmployee);
 

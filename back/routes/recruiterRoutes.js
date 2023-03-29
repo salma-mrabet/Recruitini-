@@ -19,6 +19,6 @@ router.get('/recruiter/:id', FindSingleRecruiter);
 router.put('/recruiterupdate',UpdateRecruiter );
 
 // add recruiter
-router.delete('/recruiter/:id', DeleteRecruiter);
+router.delete('/recruiterdelete', DeleteRecruiter);
 
 module.exports = router;

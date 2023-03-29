@@ -28,6 +28,19 @@ export default function Header() {
         >
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="#action2">About Us</Nav.Link>
+          {user && user.role==="Employee" &&(
+            <>
+             <Nav.Link href="#action2">Job Offers</Nav.Link>
+             <Nav.Link href="/recommendation">Recommendations</Nav.Link>
+             <Nav.Link href="/advice">Advice</Nav.Link>
+             </>
+          )}
+          {user && user.role==="Recruiter" &&(
+            <>
+             <Nav.Link href="#action2">Candidats</Nav.Link>
+             
+             </>
+          )}
           {user && (
           <NavDropdown title="Account" id="navbarScrollingDropdown">
           

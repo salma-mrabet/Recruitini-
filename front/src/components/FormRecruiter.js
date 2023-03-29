@@ -26,7 +26,7 @@ export const InfoForm = () => {
 
   const handleUpdate = () => {
    
-    fetch(`http://localhost:3700/api/recruitereupdate`, {
+    fetch(`http://localhost:3700/api/recruiterupdate`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export const InfoForm = () => {
         phone,
         company,
         position,
-        description
+        description,
        
       }),
    

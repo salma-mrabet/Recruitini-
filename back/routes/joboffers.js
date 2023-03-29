@@ -13,13 +13,13 @@ router.post('/joboffer', AddJobOffer);
 router.get('/joboffers',FindAllJobOffers );
 
 // find single employee
-router.get('/joboffer/:id', FindSingleJobOffer);
+router.get('/joboffer', FindSingleJobOffer);
 
 // modify employee
-router.put('/joboffer/:id',UpdateJobOffer );
+router.put('/jobofferupdate',UpdateJobOffer );
 
 // add employee
-router.delete('/joboffer/:id', DeleteJobOffer);
+router.delete('/jobofferdelete', DeleteJobOffer);
 
 
 

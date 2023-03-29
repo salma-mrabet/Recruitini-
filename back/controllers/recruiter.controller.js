@@ -41,7 +41,7 @@ const FindAllRecruiters = async (req,res) => {
 
 const FindSingleRecruiter = async (req,res) => {
     try{
-        const data = await recruiter.findOne({_id: req.params.id});
+        const data = await recruiter.findOne({_id: req.user});
         res.status(201).json(data)
     }catch(error){
         console.log(error.message)
@@ -76,7 +76,7 @@ const UpdateRecruiter = async (req,res) => {
 
 const DeleteRecruiter = async (req,res) => {
     try{
-        const data = await recruiter.deleteOne({_id: req.params.id});
+        const data = await recruiter.deleteOne({_id: req.user});
         res.status(201).json({message: "recruiter deleted"})
     }catch(error){
         console.log(error.message)

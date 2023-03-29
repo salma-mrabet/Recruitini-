@@ -42,7 +42,7 @@ const UpdateJobOffer = async (req,res) => {
     try{
    
         const data = await job.findOneAndUpdate(
-            {_id: req.params.id},
+            {_id: req.user},
             req.body,
             {new:true}
             );

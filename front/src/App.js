@@ -13,6 +13,8 @@ import UpdateEmployee from './pages/UpdateProfile/UpdateEmployee';
 import UpdateRecruiter from './pages/UpdateProfile/UpdateRecruiter';
 import ProfileEmployee from './pages/Profile/ProfileEmployee';
 import ProfileRecruiter from './pages/Profile/ProfileRecruiter';
+import Recommendation from './pages/Recommendation/Recommendation';
+import Advice from './pages/Recommendation/Advice';
 
 
 
@@ -70,10 +72,29 @@ function App() {
 
 
 
-<Route 
+{/* <Route 
             path="/profile"
             element={role==="Employee"? <ProfileEmployee/> : <ProfileRecruiter/>}
+          /> */}
+
+<Route 
+            path="/profile"
+            element={role==="Recruiter"? <ProfileRecruiter/>
+            : role==="Employee"? <ProfileEmployee/>: <LandingPage />   }
           />
+
+<Route 
+            path="/recommendation"
+            element={<Recommendation/>}
+             
+          />
+
+<Route 
+            path="/advice"
+            element={<Advice/>}
+             
+          />
+
 
 
         

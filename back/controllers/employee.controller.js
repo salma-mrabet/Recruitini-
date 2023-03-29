@@ -42,7 +42,7 @@ const FindAllEmployees = async (req,res) => {
 
 const FindSingleEmployee = async (req,res) => {
     try{
-        const data = await employee.findOne({_id: req.params.id});
+        const data = await employee.findOne({_id: req.user});
         res.status(201).json(data)
     }catch(error){
         console.log(error.message)

@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row,Button } from 'react-bootstrap';
 import "./LandingPage.css";
 
+
 export default function LandingPage() {
   return (
     <div className='main'>
@@ -30,6 +31,9 @@ export default function LandingPage() {
                </div>
             </Row>
         </Container>
+      
+
+        
 
         
     </div>
