@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function RowDetails({ jobtitle,company,jobdescription,joblocation, skills,OnDelete}) {
+function RowDetails({ jobtitle,company,jobdescription,joblocation, skills}) {
   
  
   return (
@@ -24,7 +24,7 @@ function RowDetails({ jobtitle,company,jobdescription,joblocation, skills,OnDele
       </span>
      
      {/* boutton supprimer */}
-      <span className="badge bg-danger" onClick={()=>OnDelete()}><i
+      <span className="badge bg-danger" ><i
         className="fas fa-trash-alt"
       ></i></span>
     </td>

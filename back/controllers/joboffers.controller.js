@@ -19,10 +19,16 @@ const AddJobOffer = async (req,res) => {
   
 }
 
-const FindAllJobOffers = async (req,res) => {
+const FindAllJobOffersSingleRecruiter = async (req,res) => {
     try{
-        const data = await job.find();
+      
+        const emaill = req.query.email;
+        // console.log(emaill)
+
+       
+        const data = await job.find({recruiter: emaill});
         res.status(201).json(data)
+        // console.log(data)
     }catch(error){
         console.log(error.message)
     }
@@ -69,7 +75,7 @@ const DeleteJobOffer = async (req,res) => {
 
 module.exports = {
     AddJobOffer,
-    FindAllJobOffers,
+    FindAllJobOffersSingleRecruiter,
     FindSingleJobOffer,
     UpdateJobOffer,
     DeleteJobOffer

@@ -13,7 +13,7 @@ export default function Recommendation(props) {
     
 
     return (
-      <div className="Container">
+      <div className="Container2">
         <Card border="light" className="bg-white shadow-sm mb-4">
         <Card.Body>
 <main class="st_viewport">

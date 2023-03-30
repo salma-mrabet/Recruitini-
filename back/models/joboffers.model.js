@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
-// const {ObjectId} = mongoose.Schema.Types;
+const {ObjectId} = mongoose.Schema.Types
 
 
 const JobSchema = new Schema ({
@@ -30,6 +30,12 @@ const JobSchema = new Schema ({
     
     skills: {
       type: String,
+      
+    },
+    recruiter: {
+      type:String,
+     
+     
       
     },
  

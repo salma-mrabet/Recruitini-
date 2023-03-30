@@ -1,5 +1,5 @@
 const express = require('express');
-const { AddJobOffer, FindAllJobOffers, FindSingleJobOffer, UpdateJobOffer, DeleteJobOffer } = require('../controllers/joboffers.controller');
+const { AddJobOffer, FindAllJobOffersSingleRecruiter, FindSingleJobOffer, UpdateJobOffer, DeleteJobOffer } = require('../controllers/joboffers.controller');
 const requireAuth = require('../middleware/requireAuth');
 const router = express.Router();
 
@@ -10,7 +10,7 @@ router.use(requireAuth);
 router.post('/joboffer', AddJobOffer);
 
 // find all employees
-router.get('/joboffers',FindAllJobOffers );
+router.get('/joboffers',FindAllJobOffersSingleRecruiter );
 
 // find single employee
 router.get('/joboffer', FindSingleJobOffer);
@@ -19,7 +19,7 @@ router.get('/joboffer', FindSingleJobOffer);
 router.put('/jobofferupdate',UpdateJobOffer );
 
 // add employee
-router.delete('/jobofferdelete', DeleteJobOffer);
+router.delete('/jobofferdelete/:id', DeleteJobOffer);
 
 
 
