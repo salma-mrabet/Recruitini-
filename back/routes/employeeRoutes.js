@@ -2,7 +2,7 @@ const express = require('express');
 const requireAuth= require ('../middleware/requireAuth')
 
 
-const { AddEmployee, FindAllEmployees, FindSingleEmployee, UpdateEmployee, DeleteEmployee, AuthEmployee } = require('../controllers/employee.controller');
+const { AddEmployee, FindAllEmployees, FindSingleEmployee, UpdateEmployee, DeleteEmployee,  UpdateCv} = require('../controllers/employee.controller');
 
 const router = express.Router();
 // require auth for all  routes
@@ -19,6 +19,8 @@ router.get('/employee/:id', FindSingleEmployee);
 
 // modify employee
 router.put('/employeeupdate',UpdateEmployee );
+//update cv
+router.put('/employeupdatecv', UpdateCv );
 
 // add employee
 router.delete('/employeedelete', DeleteEmployee);

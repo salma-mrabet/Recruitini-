@@ -72,6 +72,22 @@ const UpdateEmployee = async (req,res) => {
         console.log(error.message)
     }
 }
+const UpdateCv = async (req,res) => {
+    const { cv} = req.body;
+
+    try{
+       
+        const data = await employee.findOneAndUpdate(
+            {_id: req.user},
+            req.body,
+            {new:true}
+            );
+        res.status(201).json(data)
+        
+    }catch(error){
+        console.log(error.message)
+    }
+}
 
 const DeleteEmployee = async (req,res) => {
     try{
@@ -103,5 +119,5 @@ module.exports = {
     FindSingleEmployee,
     UpdateEmployee,
     DeleteEmployee,
-    // AuthEmployee
+    UpdateCv
 }
