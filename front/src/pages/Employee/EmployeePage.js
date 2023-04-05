@@ -19,6 +19,7 @@ const EmployeePage = ()=>{
 
     const [valide,setValide] = useState("")
     const [error,setError] = useState("")
+    const [recommend,setRecommend] = useState("")
 
     // Create new plugin instance
    const defaultLayoutPluginInstance = defaultLayoutPlugin();
@@ -56,6 +57,7 @@ const EmployeePage = ()=>{
             }).then(res=>res.json())
             .then(()=>{
                 setValide("true")
+                setRecommend("true")
                 setTimeout(()=>{setValide("")}
                 , 2000)
                
@@ -141,9 +143,9 @@ const EmployeePage = ()=>{
             </div>
             </div>
 
-            <Button variant="outline-primary" onClick={CvDetails} >Submit  </Button>
+            <Button variant="outline-primary" onClick={CvDetails}  >Submit  </Button>
             {(valide && <div className="valide">Resume uploaded</div>) || (error && <div className="error">{error}</div>)}
-
+            {(recommend && <Button className="outline-primary"  href="/recommendation"> Get recommendations </Button>)}
             <br></br>
   
 

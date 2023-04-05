@@ -8,7 +8,7 @@ const AddJobOffer = async (req,res) => {
       
                     console.log(req.body);
                     await job.create(req.body);
-                    res.status(201).json({message : "Added with success"});
+                    res.status(201).json(req.body);
         
 
         
@@ -33,6 +33,18 @@ const FindAllJobOffersSingleRecruiter = async (req,res) => {
         console.log(error.message)
     }
 }
+
+const FindAllJobOffersAllRecruiters = async (req,res) => {
+    try{
+      
+        const data = await job.find();
+        res.status(201).json(data)
+        console.log(data)
+    }catch(error){
+        console.log(error.message)
+    }
+}
+
 
 const FindSingleJobOffer = async (req,res) => {
     try{
@@ -64,7 +76,9 @@ const UpdateJobOffer = async (req,res) => {
 
 const DeleteJobOffer = async (req,res) => {
     try{
-        const data = await job.deleteOne({_id: req.params.id});
+        const idd = req.query.id;
+        console.log(idd)
+        const data = await job.findByIdAndDelete(idd);
         res.status(201).json({message: "job deleted"})
     }catch(error){
         console.log(error.message)
@@ -76,6 +90,7 @@ const DeleteJobOffer = async (req,res) => {
 module.exports = {
     AddJobOffer,
     FindAllJobOffersSingleRecruiter,
+    FindAllJobOffersAllRecruiters,
     FindSingleJobOffer,
     UpdateJobOffer,
     DeleteJobOffer

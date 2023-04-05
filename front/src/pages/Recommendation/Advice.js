@@ -14,7 +14,7 @@ export default function Advice() {
 // import CardContent from "@mui/material/CardContent";
 // import CardMedia from "@mui/material/CardMedia";
 // import Typography from "@mui/material/Typography";
-// import { Button, CardActionArea, CardActions,Item } from "@mui/material";
+// import { Button, CardActionArea, CardActions,ListItem } from "@mui/material";
 // import Grid from '@mui/material/Grid';
 
 // export default function Advice(props) {
@@ -22,7 +22,7 @@ export default function Advice() {
 //   return (
 //     <>
 //       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-//         <Grid item xs={6}>
+//         <Grid ListItem xs={6}>
 //           <Card sx={{ maxWidth: 345 }}>
 //             <CardActionArea>
 //               <CardMedia
@@ -52,14 +52,14 @@ export default function Advice() {
 //             </CardActions>
 //           </Card>
 //         </Grid>
-//         <Grid item xs={6}>
-//           <Item>2</Item>
+//         <Grid ListItem xs={6}>
+//           <ListItem>2</ListItem>
 //         </Grid>
-//         <Grid item xs={6}>
-//           <Item>3</Item>
+//         <Grid ListItem xs={6}>
+//           <ListItem>3</ListItem>
 //         </Grid>
-//         <Grid item xs={6}>
-//           <Item>4</Item>
+//         <Grid ListItem xs={6}>
+//           <ListItem>4</ListItem>
 //         </Grid>
 //       </Grid>
 //     </>

@@ -2,8 +2,9 @@ import React from 'react';
 import {Nav, Navbar,Button, Form,NavDropdown, Container  } from 'react-bootstrap';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
+import './Header.css'
 
-export default function Header() {
+export default function Header(props) {
   const { logout } = useLogout()
   const { user } = useAuthContext()
 
@@ -13,7 +14,7 @@ export default function Header() {
 
   
   return (
-    <Navbar bg="light" expand="lg" >
+    <Navbar bg="light" expand="lg" className='nav'>
     <Container fluid>
       <Navbar.Brand href="/">Recruitini</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
@@ -27,17 +28,20 @@ export default function Header() {
           navbarScroll
         >
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="#action2">About Us</Nav.Link>
+          <Nav.Link href="#about-us">About Us</Nav.Link>
           {user && user.role==="Employee" &&(
             <>
-             <Nav.Link href="#action2">Job Offers</Nav.Link>
+             <Nav.Link href="/jobs">Job Offers</Nav.Link>
              <Nav.Link href="/recommendation">Recommendations</Nav.Link>
              <Nav.Link href="/advice">Advice</Nav.Link>
+            
              </>
           )}
           {user && user.role==="Recruiter" &&(
             <>
-             <Nav.Link href="#action2">Candidats</Nav.Link>
+             <Nav.Link href="/candidats">Candidats</Nav.Link>
+             <Nav.Link href="/recruiter">My job offers</Nav.Link>
+             <Nav.Link href="/jobs">jobs</Nav.Link>
              
              </>
           )}

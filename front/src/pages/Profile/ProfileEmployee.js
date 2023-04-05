@@ -5,6 +5,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import "./Profile.css";
+
 
 export default function ProfileEmployee() {
 
@@ -39,9 +41,15 @@ export default function ProfileEmployee() {
     
       
   return (
+  
+
+
     <div>
+                       
+
 
          <div className="Container"  >
+         <h2 className="profile"  >Profile</h2>
       <Card border="light" className="bg-white shadow-sm mb-4">
         <Card.Body>
       <Card className="mb-3 mt-3" style={{ padding: "20px" }}>
@@ -77,6 +85,7 @@ export default function ProfileEmployee() {
       </Card>
     </div>
   </div>
+ 
    
   )
     }

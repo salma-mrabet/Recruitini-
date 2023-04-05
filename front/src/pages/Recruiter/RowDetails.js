@@ -1,17 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function RowDetails({ jobtitle,company,jobdescription,joblocation, skills}) {
+function RowDetails({ jobtitle,
+  jobdescription,
+  skills,
+  company,
+  joblocation,_id,OnDelete}) {
   
  
   return (
     <tr>
   
     <th>{jobtitle}</th>
-    <th>{company}</th>
     <th>{jobdescription}</th>
-    <th>{joblocation} </th>
     <th>{skills}</th>
+    <th>{company}</th>
+    
+    <th>{joblocation} </th>
+    
     
     
     <td className="gap__actions">
@@ -24,7 +30,7 @@ function RowDetails({ jobtitle,company,jobdescription,joblocation, skills}) {
       </span>
      
      {/* boutton supprimer */}
-      <span className="badge bg-danger" ><i
+      <span className="badge bg-danger" onClick={()=>OnDelete(_id)} ><i
         className="fas fa-trash-alt"
       ></i></span>
     </td>

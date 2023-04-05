@@ -11,6 +11,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
+import "./Profile.css";
 
 
 export default function ProfileRecruiter() {
@@ -42,13 +43,14 @@ export default function ProfileRecruiter() {
           .catch((err) => {
             console.log(err);
           });
-      });
+      },[]);
     
       
   return (
     <div>
 
          <div className="Container"  >
+         <h2 className="profile"  >Profile</h2>
       <Card border="light" className="bg-white shadow-sm mb-4">
         <Card.Body>
       <Card className="mb-3 mt-3" style={{ padding: "20px" }}>
@@ -79,6 +81,9 @@ export default function ProfileRecruiter() {
         <Card.Footer>
         <Button variant="outline-primary" href="/updateprofile" style={{  width : "300px",borderRadius: "5px", margin: "20px" }}>
   Edit
+</Button>
+<Button variant="outline-primary" href="/recruiter" >
+  Submit A Job Offer
 </Button>
 
          

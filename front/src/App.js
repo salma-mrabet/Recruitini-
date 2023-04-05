@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import { useAuthContext } from './hooks/useAuthContext';
 import RecruiterPage from './pages/Recruiter/RecruiterPage';
+
 import EmployeePage from './pages/Employee/EmployeePage';
 import UpdateEmployee from './pages/UpdateProfile/UpdateEmployee';
 import UpdateRecruiter from './pages/UpdateProfile/UpdateRecruiter';
@@ -15,6 +16,8 @@ import ProfileEmployee from './pages/Profile/ProfileEmployee';
 import ProfileRecruiter from './pages/Profile/ProfileRecruiter';
 import Recommendation from './pages/Recommendation/Recommendation';
 import Advice from './pages/Recommendation/Advice';
+import CandidatsPage from './pages/CandidatsPage/candidats';
+import JobsPage from './pages/jobs/Jobs';
 
 
 
@@ -42,12 +45,12 @@ function App() {
 
         <Route 
             path="/recruiter"
-            element={role==="Recruiter"? <RecruiterPage/> : <Navigate to="/login" />}
+            element={role==="Recruiter"? <RecruiterPage/>  : <Navigate to="/login" />}
           />
           
         <Route 
             path="/employee"
-            element={role==="Employee"? <EmployeePage/> : <Navigate to="/login" />}
+            element={role==="Employee"? <LandingPage/> : <Navigate to="/login" />}
           />
          
           <Route 
@@ -94,6 +97,27 @@ function App() {
             element={<Advice/>}
              
           />
+          <Route 
+            path="/resume"
+            element={<EmployeePage/>}
+             
+          />
+
+
+
+<Route 
+            path="/candidats"
+            element={<CandidatsPage/>}
+             
+          />
+
+<Route 
+            path="/jobs"
+            element={<JobsPage/>}
+             
+          />
+
+
 
 
 

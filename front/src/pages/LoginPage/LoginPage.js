@@ -20,45 +20,11 @@ export default function LoginPage() {
 
     await login(email, password, role);
 
-    // if(!error){
-    //   if(role == "Employee"){
-    //     navigate("/employee")
 
-    //   }else if (role =="Recruiter"){
-    //     navigate("/Recruiter")
-
-
-    //   }
-    // }
   }
 
-  // const submitHandler = async (e) => {
-  //   e.preventDefault();
-  //   try{
-  //     const config = {
-  //       headers: {
-  //         "Content-type": "application/json",
-  //       },
-  //     };
-  //     setLoading(true);
+ 
 
-  //     const {data} = await axios.post(
-  //       "http://localhost:3700/api/login",
-  //       {
-  //         email,
-  //         password,
-  //       },
-  //       config
-  //       ) ;
-
-  //       console.log(data);
-  //       localStorage.setItem('employeeInfo', JSON.stringify(data));
-  //       setLoading(false);
-  //   }catch(error){
-     
-
-  //   }
-  // };
 
   return (
     <div>

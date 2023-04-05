@@ -165,7 +165,7 @@ export const GeneralInfoForm = () => {
 
               <div className="mt-3">
              
-                <Button variant="outline-primary" type="submit" href="/employee">
+                <Button variant="outline-primary" type="submit" href="/resume">
                   Add your Resume
                 </Button>
                

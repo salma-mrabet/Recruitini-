@@ -38,6 +38,10 @@ const JobSchema = new Schema ({
      
       
     },
+    // id: {
+    //   type:ObjectId,
+    
+    // },
  
   
    
