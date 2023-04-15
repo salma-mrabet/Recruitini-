@@ -6,6 +6,8 @@ import AOS from "aos";
 import "animate.css";
 import About from "./AboutUs/About";
 import "./aboutUs.css";
+import Articles from "./Articles/articles";
+
 
 AOS.init();
 
@@ -17,15 +19,9 @@ export default function LandingPage(props) {
       <div className="main">
         <Container>
           <Row>
-            <div className="intro-text ">
-              <div>
-                <h1 className="title ">Welcome to Recruitini</h1>
-                <p className="subtitle">
-                  One Safe place for your recruitement process
-                </p>
-                <div class="animated-title">
-                  <div class="text-bottom"></div>
-                </div>
+        
+             
+             
                 <div>
                   {!user && (
                     <div className="buttonContainer">
@@ -33,25 +29,17 @@ export default function LandingPage(props) {
                         <Button
                           size="lg"
                           className="landingbutton"
-                          variant="outline-primary"
+                          variant="dark"
                         >
-                          Login
+                          Get Started
                         </Button>
                       </a>
-                      <a href="/signup">
-                        <Button
-                          size="lg"
-                          className="landingbutton"
-                          variant="outline-primary"
-                        >
-                          Register
-                        </Button>
-                      </a>
+                    
                     </div>
                   )}
                 </div>
-              </div>
-            </div>
+              
+           
           </Row>
         </Container>
       </div>
@@ -127,7 +115,35 @@ export default function LandingPage(props) {
       <div className="main3">
         <About />
       </div>
-      <div className="main3"></div>
+      
+      
+
+      <div className="main2">
+        <div className="content float-left " data-aos="fade-right">
+          <div className="content-left">
+            <div className="item-title">
+            “Opportunities don't happen, you create them.”
+            </div>
+            <p>– Chris Grosser</p>
+          
+          </div>
+        </div>
+        <div className="content float-right" data-aos="fade-left">
+                  <div className="content-right">
+                    <div className="item-title">“Opportunities don't happen, you create them.” </div>
+                    <p>
+                    – Chris Grosser
+
+                    </p>
+                  
+                  </div>
+                </div>
+      </div>
+
+      <div className="main4">
+        <Articles />
+      </div>
+      
     </>
   );
 }

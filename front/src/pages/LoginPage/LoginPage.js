@@ -27,7 +27,7 @@ export default function LoginPage() {
 
 
   return (
-    <div>
+    <div className="login">
       <MainScreen title="LOGIN">
     
 
@@ -84,8 +84,8 @@ export default function LoginPage() {
         </Form.Group>
       </fieldset>
 
-      <Button className="button" variant="primary" type="submit" disabled={isLoading} onClick={handleSubmit} >
-            Submit
+      <Button className="button" variant="dark" type="submit" disabled={isLoading} onClick={handleSubmit} >
+            Login
           </Button>
           {error && <div className="error">{error}</div>}
         </Form>

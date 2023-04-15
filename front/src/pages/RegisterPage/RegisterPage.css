@@ -8,8 +8,9 @@
  
   
 }
-MainScreen{
-  margin-left: 200px
+.register{
+  background-image: url("../../assets/images/image.jpg");
+  background-size: cover;
 }
 
 .button{

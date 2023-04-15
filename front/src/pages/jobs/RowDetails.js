@@ -20,14 +20,7 @@ function RowDetails({
    
       <th>{recruiter}</th>
 
-      <td className="gap__actions">
-        {/* boutton modifier */}
-        <span className="badge bg-info">
-          <Link to={`/updateoffer`} className="text-white">
-            <i className="fas fa-edit"></i>
-          </Link>
-        </span>
-      </td>
+      
     </tr>
   );
 }

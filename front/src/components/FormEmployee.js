@@ -1,5 +1,5 @@
 import React, { Fragment,  useState } from "react";
-
+import MainScreen from "./MainScreen";
 import ListGroup from "react-bootstrap/ListGroup";
 
 import {
@@ -63,14 +63,16 @@ export const GeneralInfoForm = () => {
   };
 
   return (
-    <div>
+    <div className="update">
   
+<div>
 
 
     <div className="Container">
       <Card border="light" className="bg-white shadow-sm mb-4">
         <Card.Body>
           <h5 className="mb-4"> General information</h5>
+          <Card className="mb-3 mt-3" style={{ padding: "20px" }}>
           <Form>
             <Row>
               <Col md={6} className="mb-3">
@@ -157,7 +159,12 @@ export const GeneralInfoForm = () => {
             <Row>
               <div className="mt-3">
          
-                <Button variant="outline-primary" href="/profile"   onClick={handleUpdate}>
+                <Button variant="outline-dark" href="/profile"  style={{
+                        width: "340px",
+                        borderRadius: "5px",
+                        
+                      }} 
+                       onClick={handleUpdate}>
                   Save All
                 </Button>
                
@@ -165,15 +172,18 @@ export const GeneralInfoForm = () => {
 
               <div className="mt-3">
              
-                <Button variant="outline-primary" type="submit" href="/resume">
+                <Button variant="outline-dark" type="submit"   href="/resume">
                   Add your Resume
                 </Button>
                
               </div>
             </Row>
           </Form>
+          </Card>
         </Card.Body>
       </Card>
+    </div>
+   
     </div>
     </div>
   );

@@ -4,21 +4,25 @@
   line-height: 1.5;
   margin:30px;
   display: inline;
-  background-image: linear-gradient(
-        transparent 50%,
-        #e1fffe 50%,
-        #b0f8ff 85%,
-        transparent 85%,
-        transparent 100%
-    );
-    background-repeat: no-repeat;
-    background-size: 0% 100%;
   
-    animation: animatedBackground 2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s forwards;
+    
+}
+.Container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 700px;
+    margin-left: 200px
+   
+   
+    
+  }
+
+.profiles{
+    background-image: url("../../assets/images/profile.jpg");
+    background-size: cover;
 }
 
-@keyframes animatedBackground {
-    to {
-        background-size: 100% 100%;
-    }
-}
+
+
+

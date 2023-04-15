@@ -12,7 +12,7 @@ router.post('/joboffer', AddJobOffer);
 // find all joboffers for one recruiter
 router.get('/joboffers',FindAllJobOffersSingleRecruiter );
 
-// find all joboffers for all recruiter
+// find all joboffers for all recruiters
 router.get('/joboffersall',FindAllJobOffersAllRecruiters);
 
 // find single joboffer

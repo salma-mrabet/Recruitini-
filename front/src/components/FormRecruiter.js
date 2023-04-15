@@ -74,6 +74,7 @@ export const InfoForm = () => {
       <Card border="light" className="bg-white shadow-sm mb-4">
         <Card.Body>
           <h5 className="mb-4"> General information</h5>
+          <Card className="mb-3 mt-3" style={{ padding: "20px" }}>
           <Form>
             <Row>
               <Col md={6} className="mb-3">
@@ -179,6 +180,7 @@ export const InfoForm = () => {
               </div>
             </Row>
           </Form>
+          </Card>
         </Card.Body>
       </Card>
     </div>

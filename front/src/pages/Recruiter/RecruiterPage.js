@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import RowDetails from "./RowDetails";
-import "./form.css";
+import "./recruiterPage.css";
+import MainScreen from "../../components/MainScreen";
+import Card from "react-bootstrap/Card";
+export default function RecruiterPage() {
 
-const RecruiterPage=() =>{
   const [jobtitle, setJobtitle] = useState("");
   const [company, setCompany] = useState("");
   const [jobdescription, setJobdescription] = useState("");
@@ -101,14 +103,21 @@ const RecruiterPage=() =>{
   };
 
   return (
-    <>
+
+    <div className="recruiter" 
+    >
+       <MainScreen title="MY JOBS">
+          <div className="Container">
+            <Card border="light" className="bg-white shadow-sm mb-4">
+              <Card.Body>
       <div
         className="card input-filed"
         style={{
-          margin: "20vh auto",
-          maxWidth: "500px",
+         
+          maxWidth: "800px",
           padding: "20px",
           textAlign: "center",
+      
         }}
       >
         <table className="striped">
@@ -146,6 +155,10 @@ const RecruiterPage=() =>{
             )}
           </tbody>
         </table>
+        <div style={{minHeight: "5vh"}}>
+
+        </div>
+    
         <input
           type="text"
           placeholder="Title"
@@ -186,8 +199,13 @@ const RecruiterPage=() =>{
         {(valide && <div className="valide">Job uploaded</div>) ||
           (error && <div className="error">{error}</div>)}
       </div>
-    </>
+      </Card.Body>
+      </Card>
+          </div>
+        </MainScreen>
+    </div>
+
   );
 }
 
-export default RecruiterPage;
+

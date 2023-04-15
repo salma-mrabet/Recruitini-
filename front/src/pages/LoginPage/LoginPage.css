@@ -3,10 +3,14 @@
   flex-direction: column;
   margin: 20px;
   width: 700px;
-  margin-left: 200px
+  margin-left: 200px;
  
- 
+
   
+}
+.login{
+  background-image: url("../../assets/images/image.jpg");
+  background-size: cover;
 }
 
 

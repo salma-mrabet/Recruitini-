@@ -10,25 +10,26 @@ function Jobs() {
 
   const { user } = useAuthContext();
 
-//   useEffect(() => {
-//     console.log(user.token)
-//     fetch(`http://localhost:3700/api/job/joboffersall`, {
-//       method: "get",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Authorization: `Bearer ${user.token}`,
-//         Role: `${user.role}`,
-//       },
-//     })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         setJoboffers(data);
-//         console.log(data);
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   }, []);
+  //only works the first time
+  // useEffect(() => {
+  //   console.log(user.token)
+  //   fetch(`http://localhost:3700/api/job/joboffersall`, {
+  //     method: "get",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: `Bearer ${user.token}`,
+  //       Role: `${user.role}`,
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setJoboffers(data);
+  //       console.log(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   return (
     <div>
@@ -37,7 +38,7 @@ function Jobs() {
           className="card input-filed"
           style={{
             margin: "20vh auto",
-            maxWidth: "500px",
+            maxWidth: "900px",
             padding: "20px",
             textAlign: "center",
           }}

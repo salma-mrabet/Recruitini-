@@ -14,7 +14,7 @@ export default function Header(props) {
 
   
   return (
-    <Navbar bg="light" expand="lg" className='nav'>
+    <Navbar bg="light"  className='nav'>
     <Container fluid>
       <Navbar.Brand href="/">Recruitini</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
@@ -28,7 +28,7 @@ export default function Header(props) {
           navbarScroll
         >
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="#about-us">About Us</Nav.Link>
+         {!user && (<Nav.Link href="#about-us">About Us</Nav.Link>)}
           {user && user.role==="Employee" &&(
             <>
              <Nav.Link href="/jobs">Job Offers</Nav.Link>

@@ -33,6 +33,7 @@ function RegisterPage({ history }) {
 
 
   return (
+    <div className="register">
     <MainScreen title="REGISTER">
       <div className="loginContainer">
       <Card border="light" className="bg-white shadow-sm mb-4">
@@ -122,7 +123,7 @@ function RegisterPage({ history }) {
       </fieldset>
      
 
-          <Button variant="primary" className="button" type="submit" disabled={isLoading}  onClick={handleSubmit}>
+          <Button variant="dark" className="button" type="submit" disabled={isLoading}  onClick={handleSubmit}>
             Register
           </Button>
           {error && <div className="error">{error}</div>}
@@ -138,6 +139,7 @@ function RegisterPage({ history }) {
     
      
     </MainScreen>
+    </div>
   );
 }
 

@@ -6,7 +6,7 @@ export const AboutSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #fff;
+  background-image: url("./image4.jpg");
 `;
 
 export const AboutWrapper = styled.div`
