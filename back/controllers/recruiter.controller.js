@@ -56,6 +56,7 @@ const UpdateRecruiter = async (req,res) => {
         company,
         position,
         description} = req.body;
+        console.log("test")
     
     try{
         if(!firstname || !lastname || !age || !phone || !company || !position || !description ){

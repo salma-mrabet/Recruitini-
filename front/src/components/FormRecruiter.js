@@ -25,6 +25,8 @@ export const InfoForm = () => {
   const { user } = useAuthContext();
 
   const handleUpdate = () => {
+    console.log("aa")
+    console.log(user)
    
     fetch(`http://localhost:3700/api/recruiterupdate`, {
       method: "put",
@@ -40,7 +42,7 @@ export const InfoForm = () => {
         phone,
         company,
         position,
-        description,
+        description
        
       }),
    
@@ -157,7 +159,7 @@ export const InfoForm = () => {
               <Col  className="mb-3">
                 <Form.Group id="city">
                   <Form.Label>About The Company</Form.Label>
-                  <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="Description" ></textarea>
+                  <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="Description"   onChange={(e) => setDescription(e.target.value)}></textarea>
                 </Form.Group>
                 
               </Col>

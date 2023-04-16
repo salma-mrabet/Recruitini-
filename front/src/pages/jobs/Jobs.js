@@ -11,25 +11,27 @@ function Jobs() {
   const { user } = useAuthContext();
 
   //only works the first time
-  // useEffect(() => {
-  //   console.log(user.token)
-  //   fetch(`http://localhost:3700/api/job/joboffersall`, {
-  //     method: "get",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${user.token}`,
-  //       Role: `${user.role}`,
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setJoboffers(data);
-  //       console.log(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
+  useEffect(() => {
+    if(user){
+    console.log(user)
+    fetch(`http://localhost:3700/api/job/joboffersall`, {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+        Role: `${user.role}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setJoboffers(data);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+  }, [user]);
 
   return (
     <div>
@@ -57,6 +59,7 @@ function Jobs() {
             <tbody>
               {joboffers.map(
                 ({
+                  _id,
                   jobtitle,
                   jobdescription,
                   skills,
@@ -65,6 +68,8 @@ function Jobs() {
                   recruiter,
                 }) => (
                   <RowDetails
+                  _id={_id}
+ 
                     jobtitle={jobtitle}
                     jobdescription={jobdescription}
                     skills={skills}

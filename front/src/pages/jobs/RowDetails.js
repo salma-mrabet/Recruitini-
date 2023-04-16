@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function RowDetails({
+  _id,
   jobtitle,
   jobdescription,
   skills,
@@ -10,7 +11,7 @@ function RowDetails({
   recruiter,
 }) {
   return (
-    <tr>
+    <tr key={_id} id={_id}>
       <th>{jobtitle}</th>
       <th>{jobdescription}</th>
       <th>{skills}</th>
