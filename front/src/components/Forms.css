@@ -3,7 +3,15 @@
     flex-direction: column;
     margin: 5px;
     width: 700px;
+    
  
    
 }
+
+.update{
+    display: flex;
+    flex-direction: column;
+    
+}
+
 

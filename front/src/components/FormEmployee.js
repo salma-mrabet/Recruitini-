@@ -63,15 +63,13 @@ export const GeneralInfoForm = () => {
   };
 
   return (
-    <div className="update">
-  
-<div>
-
-
-    <div className="Container">
+    <div className="profiles">
+      <div className="Profile">
+        <MainScreen title="UPDATE" className="info">
+          <div className="Container">
       <Card border="light" className="bg-white shadow-sm mb-4">
         <Card.Body>
-          <h5 className="mb-4"> General information</h5>
+        
           <Card className="mb-3 mt-3" style={{ padding: "20px" }}>
           <Form>
             <Row>
@@ -182,9 +180,10 @@ export const GeneralInfoForm = () => {
           </Card>
         </Card.Body>
       </Card>
+      </div>
+        </MainScreen>
+      </div>
     </div>
-   
-    </div>
-    </div>
+  
   );
 };

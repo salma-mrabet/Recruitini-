@@ -40,15 +40,15 @@ function Candidats() {
           className="card input-filed"
           style={{
             margin: "20vh auto",
-            maxWidth: "900px",
+            maxWidth: "1000px",
             padding: "20px",
             textAlign: "center",
           }}
         >
-          <table className="striped">
-            <thead>
-              <tr>
-                <th scope="col">FirstName</th>
+          <table className="striped table-hover">
+            <thead style={{ height: "60px" }} > 
+              <tr  >
+                <th scope="col" >FirstName</th>
                 <th scope="col">LastName</th>
                 <th scope="col">Email</th>
                 <th scope="col">Phone Number</th>
@@ -57,6 +57,7 @@ function Candidats() {
                 <th scope="col">Resume</th>
               </tr>
             </thead>
+            <tr style={{border:" 1px solid black"}}></tr>
             <tbody>
               {candidats.map(
                 ({

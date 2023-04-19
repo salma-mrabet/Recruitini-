@@ -146,7 +146,6 @@ export const InfoForm = () => {
               <Form.Group id="address">
                   <Form.Label>Occupied Position</Form.Label>
                   <Form.Control
-               
                     type="text"
                     placeholder="Post"
                     onChange={(e) => setPosition(e.target.value)}

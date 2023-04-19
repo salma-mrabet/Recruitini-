@@ -10,6 +10,7 @@ function RowDetails({
     university,
     cvlink,
 }) {
+  
   return (
     <tr>
       <th>{firstname}</th>
@@ -20,7 +21,14 @@ function RowDetails({
       <th>{linkedin} </th>
    
       <th>{university}</th>
-      <th>{cvlink}</th>
+      <th>
+      <span className="badge bg-info ">
+      <Link to={`${cvlink}`} className="text-white"><i className="fas fa-file"></i>
+      </Link>
+      </span>
+      
+      
+      </th>
 
       
     </tr>
@@ -28,3 +36,4 @@ function RowDetails({
 }
 
 export default RowDetails;
+

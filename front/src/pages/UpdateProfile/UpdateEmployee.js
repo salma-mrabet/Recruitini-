@@ -9,6 +9,7 @@ import "./update.css";
 export default  () => {
   
   return (
+    <>
     <div className="update">
    
       
@@ -21,5 +22,6 @@ export default  () => {
 
    
     </div>
+    </>
   );
 };

@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 
 import { useAuthContext } from "../../hooks/useAuthContext";
 import RowDetails from "./RowDetails";
+import "./jobs.css";
+import MainScreen from "../../components/MainScreen";
 
 function Jobs() {
 
   const [joboffers, setJoboffers] = useState([]);
-
+  const [query,setQuery] = useState("")
 
   const { user } = useAuthContext();
 
-  //only works the first time
+ 
   useEffect(() => {
     if(user){
     console.log(user)
@@ -33,19 +35,44 @@ function Jobs() {
     }
   }, [user]);
 
+  const search = (data) => {
+    return data.filter(item => 
+      item.jobtitle.toLowerCase().includes(query) ||
+      item.jobdescription.toLowerCase().includes(query) ||
+      item.skills.toLowerCase().includes(query) ||
+      item.company.toLowerCase().includes(query) ||
+      item.joblocation.toLowerCase().includes(query) ||
+      item.recruiter.toLowerCase().includes(query)  ) ;
+    };
+
+    
+
   return (
-    <div>
-      <>
+    <div className="jobs">
+     
+    <MainScreen >
+    
+   
         <div
           className="card input-filed"
           style={{
-            margin: "20vh auto",
+            margin: "10vh auto",
             maxWidth: "900px",
             padding: "20px",
             textAlign: "center",
           }}
         >
-          <table className="striped">
+          <div className="" style={{marginBottom:"40px", alignItems:"left"}}>
+            <h4>Search for a specific Offer:</h4>
+          <input 
+          type="text"
+           placeholder="Search..." 
+           className="search" 
+           onChange={(e) => setQuery(e.target.value)}
+           />
+           </div>
+
+          <table className="striped  table-hover" >
             <thead>
               <tr>
                 <th scope="col">Job title</th>
@@ -57,7 +84,7 @@ function Jobs() {
               </tr>
             </thead>
             <tbody>
-              {joboffers.map(
+               {search(joboffers).map(
                 ({
                   _id,
                   jobtitle,
@@ -82,7 +109,11 @@ function Jobs() {
             </tbody>
           </table>
         </div>
-      </>
+    
+     
+ 
+     
+    </MainScreen>
     </div>
   );
 }

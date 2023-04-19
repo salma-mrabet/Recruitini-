@@ -120,7 +120,7 @@ export default function RecruiterPage() {
       
         }}
       >
-        <table className="striped">
+        <table className="striped  table-hover">
           <thead>
             <tr>
               <th scope="col">Job title</th>
